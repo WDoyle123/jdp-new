@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme {
+  --color-olive: #636B2F;
+}
