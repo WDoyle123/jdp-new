@@ -1,9 +1,112 @@
+import { useEffect, useState } from "react";
+import { motion, useScroll } from "framer-motion";
+import { Menu, X } from "lucide-react";
+
+const navLinks = [
+  { label: "Services", href: "#services" },
+  { label: "About", href: "#about" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
+];
+
 function NavBar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  useEffect(() => {
+    const unsub = scrollY.on("change", (y) => setScrolled(y > 40));
+    return unsub;
+  }, [scrollY]);
+
   return (
-    <div className="flex justify-center">
-      <div className="w-10/12 bg-olive h-24 mt-8 rounded-xl"></div>
-    </div>
+    <motion.nav
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        backgroundColor: scrolled ? "rgba(63,69,32,0.92)" : "transparent",
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.18)" : "none",
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 items-center h-20">
+        {/* Logo — left col */}
+        <a href="#home" className="flex items-center">
+          <span
+            className="text-cream text-2xl font-bold tracking-tight whitespace-nowrap"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            The John Doyle Partnership
+          </span>
+        </a>
+
+        {/* Desktop links — centre col */}
+        <ul className="hidden md:flex items-center justify-center gap-8">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="text-cream/80 hover:text-cream text-sm font-medium tracking-wide transition-colors duration-200 relative group"
+              >
+                {link.label}
+                <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-olive-light group-hover:w-full transition-all duration-300" />
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA */}
+        <a
+          href="#contact"
+          className="hidden md:inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-olive-light text-cream hover:bg-olive transition-colors duration-200 justify-self-end"
+        >
+          Get in Touch
+        </a>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden text-cream p-2 justify-self-end"
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile drawer */}
+      {menuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          className="md:hidden bg-olive-dark/95 backdrop-blur-md px-6 pb-6"
+        >
+          <ul className="flex flex-col gap-4 pt-2">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-cream/80 hover:text-cream text-base font-medium block py-1 transition-colors"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+            <li>
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="inline-flex items-center px-5 py-2.5 rounded-lg text-sm font-semibold bg-olive-light text-cream hover:bg-olive transition-colors"
+              >
+                Get in Touch
+              </a>
+            </li>
+          </ul>
+        </motion.div>
+      )}
+    </motion.nav>
   );
 }
 
 export default NavBar;
+

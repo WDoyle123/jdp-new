@@ -2,4 +2,30 @@
 
 @theme {
   --color-olive: #636B2F;
+  --color-olive-light: #8A9440;
+  --color-olive-dark: #3F4520;
+  --color-olive-muted: #4E5526;
+  --color-cream: #F7F4EE;
+  --color-cream-dark: #EDE8DC;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--color-cream);
+  color: #1a1a1a;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
 }
