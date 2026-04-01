@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { CheckCircle, UserRound } from "lucide-react";
 
 const highlights = [
-  "Over 30 years of combined experience",
+  "Over 75 years of combined experience",
   "Tailored solutions for businesses of all sizes",
   "Proactive advice, not just compliance",
   "Dedicated partner-level attention on every account",
