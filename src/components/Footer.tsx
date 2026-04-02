@@ -37,9 +37,22 @@ function Footer() {
         </ul>
 
         {/* Copyright */}
-        <p className="text-xs text-cream/40 text-center md:text-right">
-          &copy; {new Date().getFullYear()} The John Doyle Partnership. All rights reserved.
-        </p>
+        <div className="flex flex-col items-center md:items-end gap-1">
+          <p className="text-xs text-cream/40 text-center md:text-right">
+            &copy; {new Date().getFullYear()} The John Doyle Partnership. All rights reserved.
+          </p>
+          <p className="text-xs text-cream/30 text-center md:text-right">
+            Website by{" "}
+            <a
+              href="https://williamdoyle.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cream/40 hover:text-cream/70 transition-colors duration-200 underline underline-offset-2"
+            >
+              William E. Doyle
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
