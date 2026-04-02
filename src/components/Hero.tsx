@@ -52,7 +52,7 @@ function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-olive-light text-xs md:text-sm uppercase tracking-[0.25em] font-medium mb-6"
         >
-          Licensed Accountants &amp; Business Advisors &nbsp;·&nbsp; Est. 1974
+          Licensed Accountants &nbsp;·&nbsp; Est. 1974
         </motion.p>
 
         {/* Staggered headline */}
