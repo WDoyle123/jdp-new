@@ -28,11 +28,11 @@ function NavBar() {
         boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.18)" : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 items-center h-20">
+      <div className="max-w-7xl mx-auto px-6 h-20 grid grid-cols-3 items-center">
         {/* Logo — left col */}
-        <a href="#home" className="flex items-center">
+        <a href="#home" className="flex items-center col-span-2 md:col-span-1 min-w-0">
           <span
-            className="text-cream text-2xl font-bold tracking-tight whitespace-nowrap"
+            className="text-cream font-bold tracking-tight truncate text-lg md:text-2xl"
             style={{ fontFamily: "var(--font-display)" }}
           >
             The John Doyle Partnership

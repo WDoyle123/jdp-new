@@ -49,7 +49,7 @@ function AboutUs() {
               duration: 0.8,
               ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
             }}
-            className="relative"
+            className="relative order-2 lg:order-1"
           >
             <div
               className="rounded-2xl overflow-hidden shadow-xl border border-cream-dark"
@@ -93,6 +93,7 @@ function AboutUs() {
               ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
               delay: 0.15,
             }}
+            className="order-1 lg:order-2"
           >
             <p className="text-olive text-xs tracking-[0.25em] uppercase font-medium mb-3">
               Who We Are

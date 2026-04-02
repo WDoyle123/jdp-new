@@ -52,7 +52,7 @@ function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-olive-light text-xs md:text-sm uppercase tracking-[0.25em] font-medium mb-6"
         >
-          Licensed Accountants &amp; Business Advisors
+          Licensed Accountants &amp; Business Advisors &nbsp;·&nbsp; Est. 1974
         </motion.p>
 
         {/* Staggered headline */}
@@ -105,6 +105,29 @@ function Hero() {
             Our Services
           </a>
         </motion.div>
+
+        {/* Google Reviews badge */}
+        <motion.a
+          href="https://www.google.com/search?q=The+John+Doyle+Partnership+Reviews"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.9, duration: 0.6 }}
+          className="inline-flex items-center gap-3 mt-10 px-5 py-3 rounded-full bg-white/10 border border-white/15 hover:bg-white/20 transition-all duration-200 group"
+        >
+          <div className="flex items-center gap-0.5">
+            {[...Array(5)].map((_, i) => (
+              <svg key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <span className="text-cream text-sm font-medium">5-Star Rated on Google</span>
+          <svg className="w-3.5 h-3.5 text-cream/50 group-hover:text-cream transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </motion.a>
       </motion.div>
 
       {/* Scroll indicator */}
