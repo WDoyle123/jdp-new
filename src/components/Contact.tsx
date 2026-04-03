@@ -1,24 +1,65 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, Mail, X, MessageSquare } from "lucide-react";
 
 const contactDetails = [
-  { icon: MapPin, label: "Address", value: "Marian House, Priory Cres, Southsea, Portsmouth, Southsea PO4 8RN" },
+  {
+    icon: MapPin,
+    label: "Address",
+    value: "Marian House, Priory Cres, Southsea, Portsmouth, Southsea PO4 8RN",
+  },
   { icon: Phone, label: "Phone", value: "023 9261 9999" },
   { icon: Mail, label: "Email", value: "info@johndoylepartnership.com" },
 ];
 
+function FormSkeleton() {
+  return (
+    <div className="p-6 space-y-4 animate-pulse">
+      <div className="h-38 w-full bg-white/15 rounded-xl" />
+      <div className="h-38 w-full bg-white/15 rounded-xl" />
+      <div className="h-38 w-full bg-white/15 rounded-xl" />
+      <div className="h-38 w-full bg-white/15 rounded-xl" />
+      <div className="h-38 w-full bg-white/15 rounded-xl" />
+      <div className="h-38 w-full bg-white/15 rounded-xl" />
+      <div className="h-38 w-full bg-white/15 rounded-xl" />
+    </div>
+  );
+}
+
 function Contact() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+  const scrollPos = useRef(0);
+
+  useEffect(() => {
+    if (modalOpen) {
+      scrollPos.current = window.scrollY;
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollPos.current}px`;
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo({ top: scrollPos.current, behavior: "instant" });
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+    };
+  }, [modalOpen]);
 
   function openModal() {
     setModalOpen(true);
-    document.body.style.overflow = "hidden";
+    setIframeLoaded(false);
   }
 
   function closeModal() {
     setModalOpen(false);
-    document.body.style.overflow = "";
   }
 
   return (
@@ -42,7 +83,8 @@ function Contact() {
             Contact Us
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto text-base leading-relaxed">
-            Ready to take control of your finances? Reach out and we'll get back to you promptly.
+            Ready to take control of your finances? Reach out and we'll get back
+            to you promptly.
           </p>
         </motion.div>
 
@@ -72,7 +114,9 @@ function Contact() {
                     <Icon size={18} className="text-olive-light" />
                   </div>
                   <div>
-                    <p className="text-cream/50 text-xs uppercase tracking-wider mb-0.5">{label}</p>
+                    <p className="text-cream/50 text-xs uppercase tracking-wider mb-0.5">
+                      {label}
+                    </p>
                     <p className="text-cream text-sm">{value}</p>
                   </div>
                 </li>
@@ -99,7 +143,8 @@ function Contact() {
                 Send Us a Message
               </h4>
               <p className="text-gray-500 text-sm max-w-xs mx-auto">
-                Fill in our quick contact form and we'll get back to you as soon as possible.
+                Fill in our quick contact form and we'll get back to you as soon
+                as possible.
               </p>
             </div>
             <motion.button
@@ -130,14 +175,18 @@ function Contact() {
             />
 
             {/* Centring wrapper */}
-            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 pointer-events-none">
               <motion.div
                 key="modal"
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="relative w-full max-w-xl max-h-[90vh] bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-white/20 pointer-events-auto"
+                className="relative w-full max-w-xl bg-white/10 backdrop-blur-xl rounded-2xl shadow-2xl flex flex-col overflow-hidden border border-white/20 pointer-events-auto"
+                style={{
+                  height: "min(95dvh, 95vh)",
+                  maxHeight: "min(95dvh, 95vh)",
+                }}
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Modal header */}
@@ -158,19 +207,25 @@ function Contact() {
                 </div>
 
                 {/* Scrollable iframe */}
-                <div className="flex-1 overflow-y-auto">
-                  <iframe
+                <div className="flex-1 overflow-y-auto relative">
+                  {!iframeLoaded && <FormSkeleton />}
+                  <motion.iframe
                     src="https://docs.google.com/forms/d/e/1FAIpQLSdr2z1GHrFOUD14aeT3sSA9pEd9x5YvOb6Kyx6zgirsfJWLkw/viewform?embedded=true"
                     width="100%"
-                    height="1757"
+                    height="1950"
                     frameBorder="0"
                     scrolling="no"
                     marginHeight={0}
                     marginWidth={0}
                     title="Contact Form"
+                    onLoad={() => setIframeLoaded(true)}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: iframeLoaded ? 1 : 0 }}
+                    transition={{ duration: 0.5 }}
+                    style={{ display: "block" }}
                   >
                     Loading…
-                  </iframe>
+                  </motion.iframe>
                 </div>
               </motion.div>
             </div>
@@ -182,4 +237,3 @@ function Contact() {
 }
 
 export default Contact;
-
