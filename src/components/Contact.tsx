@@ -6,10 +6,10 @@ const contactDetails = [
   {
     icon: MapPin,
     label: "Address",
-    value: "Marian House, Priory Cres, Southsea, Portsmouth, Southsea PO4 8RN",
+    value: "Marian House, 62-64 Priory Crescent, Southsea, Hampshire, PO4 8RN",
   },
-  { icon: Phone, label: "Phone", value: "023 9261 9999" },
-  { icon: Mail, label: "Email", value: "info@johndoylepartnership.com" },
+  { icon: Phone, label: "Phone", value: "02392 619 999" },
+  { icon: Mail, label: "Email", value: "info@thejohndoylepartnership.com" },
 ];
 
 function FormSkeleton() {
