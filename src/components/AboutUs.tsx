@@ -149,52 +149,52 @@ function AboutUs() {
         </div>
 
         {/* Meet the Team */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-12"
-        >
-          <p className="text-olive text-xs tracking-[0.25em] uppercase font-medium mb-3">
-            The People Behind the Numbers
-          </p>
-          <h3
-            className="text-3xl md:text-4xl font-bold text-olive-dark"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Meet the Team
-          </h3>
-        </motion.div>
-
-        <motion.div
-          variants={teamContainerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
-        >
-          {team.map((member, i) => (
-            <motion.div
-              key={i}
-              variants={teamCardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="flex flex-col items-center text-center group"
-            >
+        {/* <motion.div */}
+        {/*   initial={{ opacity: 0, y: 30 }} */}
+        {/*   whileInView={{ opacity: 1, y: 0 }} */}
+        {/*   viewport={{ once: true }} */}
+        {/*   transition={{ duration: 0.7 }} */}
+        {/*   className="text-center mb-12" */}
+        {/* > */}
+        {/*   <p className="text-olive text-xs tracking-[0.25em] uppercase font-medium mb-3"> */}
+        {/*     The People Behind the Numbers */}
+        {/*   </p> */}
+        {/*   <h3 */}
+        {/*     className="text-3xl md:text-4xl font-bold text-olive-dark" */}
+        {/*     style={{ fontFamily: "var(--font-display)" }} */}
+        {/*   > */}
+        {/*     Meet the Team */}
+        {/*   </h3> */}
+        {/* </motion.div> */}
+        {/**/}
+        {/* <motion.div */}
+        {/*   variants={teamContainerVariants} */}
+        {/*   initial="hidden" */}
+        {/*   whileInView="visible" */}
+        {/*   viewport={{ once: true, margin: "-60px" }} */}
+        {/*   className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6" */}
+        {/* > */}
+        {/*   {team.map((member, i) => ( */}
+        {/*     <motion.div */}
+        {/*       key={i} */}
+        {/*       variants={teamCardVariants} */}
+        {/*       whileHover={{ y: -6, transition: { duration: 0.25 } }} */}
+        {/*       className="flex flex-col items-center text-center group" */}
+        {/*     > */}
               {/* Photo placeholder */}
-              <div className="w-full aspect-square rounded-2xl bg-cream border border-cream-dark flex items-center justify-center mb-4 overflow-hidden group-hover:border-olive/30 group-hover:shadow-lg transition-all duration-300">
-                <UserRound size={48} className="text-olive/25" />
-              </div>
-              <p
-                className="text-olive-dark font-semibold text-sm"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                {member.name}
-              </p>
-              <p className="text-gray-400 text-xs mt-0.5">{member.role}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+        {/*       <div className="w-full aspect-square rounded-2xl bg-cream border border-cream-dark flex items-center justify-center mb-4 overflow-hidden group-hover:border-olive/30 group-hover:shadow-lg transition-all duration-300"> */}
+        {/*         <UserRound size={48} className="text-olive/25" /> */}
+        {/*       </div> */}
+        {/*       <p */}
+        {/*         className="text-olive-dark font-semibold text-sm" */}
+        {/*         style={{ fontFamily: "var(--font-display)" }} */}
+        {/*       > */}
+        {/*         {member.name} */}
+        {/*       </p> */}
+        {/*       <p className="text-gray-400 text-xs mt-0.5">{member.role}</p> */}
+        {/*     </motion.div> */}
+        {/*   ))} */}
+        {/* </motion.div> */}
       </div>
     </section>
   );
