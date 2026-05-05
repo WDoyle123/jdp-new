@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
-import mapImage from "../assets/map.png";
+import mapImage from "../assets/map.webp";
 
 const cities = [
   "Portsmouth",
@@ -78,6 +78,8 @@ function ServingTheSouth() {
           <img
             src={mapImage}
             alt="Map of South of England service area"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
         </motion.div>

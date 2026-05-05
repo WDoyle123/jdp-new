@@ -59,6 +59,7 @@ function AboutUs() {
               <iframe
                 className="w-full h-full"
                 frameBorder="0"
+                loading="lazy"
                 scrolling="no"
                 marginHeight={0}
                 marginWidth={0}

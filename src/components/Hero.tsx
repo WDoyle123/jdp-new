@@ -76,9 +76,9 @@ function Hero() {
 
         {/* Subtitle */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0.01, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.7 }}
+          transition={{ delay: 0.15, duration: 0.45 }}
           className="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           Expert accountancy services tailored for individuals and businesses.
@@ -149,4 +149,3 @@ function Hero() {
 }
 
 export default Hero;
-
