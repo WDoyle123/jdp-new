@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { CheckCircle, UserRound } from "lucide-react";
+// import { CheckCircle, UserRound } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const highlights = [
   "Over 75 years of combined experience",
@@ -8,31 +9,31 @@ const highlights = [
   "Dedicated partner-level attention on every account",
 ];
 
-const team = [
-  { name: "Andrew Doyle", role: "Accountant" },
-  { name: "Jasmine Doyle", role: "Accountant" },
-  { name: "Prunella Brown", role: "Accountant" },
-  { name: "Jess Ballard-Harris", role: "Accountant" },
-  { name: "Florence Doyle", role: "Accountant Assistant" },
-  { name: "Karlie McPhillimey", role: "Accountant Assistant" },
-];
+// const team = [
+//   { name: "Andrew Doyle", role: "Accountant" },
+//   { name: "Jasmine Doyle", role: "Accountant" },
+//   { name: "Prunella Brown", role: "Accountant" },
+//   { name: "Jess Ballard-Harris", role: "Accountant" },
+//   { name: "Florence Doyle", role: "Accountant Assistant" },
+//   { name: "Karlie McPhillimey", role: "Accountant Assistant" },
+// ];
 
-const teamContainerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
-};
+// const teamContainerVariants = {
+//   hidden: {},
+//   visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+// };
 
-const teamCardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.55,
-      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-    },
-  },
-};
+// const teamCardVariants = {
+//   hidden: { opacity: 0, y: 30 },
+//   visible: {
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       duration: 0.55,
+//       ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+//     },
+//   },
+// };
 
 function AboutUs() {
   return (
@@ -181,7 +182,7 @@ function AboutUs() {
         {/*       whileHover={{ y: -6, transition: { duration: 0.25 } }} */}
         {/*       className="flex flex-col items-center text-center group" */}
         {/*     > */}
-              {/* Photo placeholder */}
+        {/* Photo placeholder */}
         {/*       <div className="w-full aspect-square rounded-2xl bg-cream border border-cream-dark flex items-center justify-center mb-4 overflow-hidden group-hover:border-olive/30 group-hover:shadow-lg transition-all duration-300"> */}
         {/*         <UserRound size={48} className="text-olive/25" /> */}
         {/*       </div> */}
