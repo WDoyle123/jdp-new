@@ -23,9 +23,10 @@ function NavBar() {
     <motion.nav
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        backgroundColor: scrolled ? "rgba(63,69,32,0.92)" : "transparent",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-        boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.18)" : "none",
+        backgroundColor: scrolled ? "rgba(27,54,45,0.75)" : "transparent",
+        backdropFilter: scrolled ? "blur(16px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
+        boxShadow: scrolled ? "0 1px 0 rgba(0,0,0,0.08)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 h-20 grid grid-cols-3 items-center">

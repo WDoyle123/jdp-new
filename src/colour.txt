@@ -1,0 +1,5 @@
+main red: #4b030f
+main green: #1b362d
+accent green: #3f5a4b
+accent yellow: #a87f30
+accent cream: #c7af7f
