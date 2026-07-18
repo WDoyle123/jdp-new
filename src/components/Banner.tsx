@@ -9,7 +9,7 @@ function Banner() {
           <span className="font-semibold uppercase tracking-wider text-cream-dark">
             Office Closure:
           </span>{" "}
-          From 08/06/2026 to 12/07/2026, the premises will be closed while
+          From 08/06/2026 to 03/08/2026, the premises will be closed while
           refurbishment takes place.
         </p>
       </div>

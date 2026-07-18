@@ -67,7 +67,7 @@ function Closure() {
           className="text-cream/70 text-lg md:text-xl max-w-2xl mx-auto mb-4 leading-relaxed"
         >
           From the <span className="text-cream font-semibold">8th of June 2026</span> to the{" "}
-          <span className="text-cream font-semibold">12th of July 2026</span>, the
+          <span className="text-cream font-semibold">3rd of August 2026</span>, the
           premises will be closed while refurbishment takes place. We can't
           wait to welcome you back to an improved space.
         </motion.p>
