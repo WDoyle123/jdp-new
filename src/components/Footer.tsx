@@ -44,9 +44,9 @@ function Footer() {
           <p className="text-xs text-cream/30 text-center md:text-right">
             Website by{" "}
             <a
-              href="https://williamdoyle.co.uk"
+              href="https://williamdoyle.co.uk/"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="author noopener noreferrer"
               className="text-cream/40 hover:text-cream/70 transition-colors duration-200 underline underline-offset-2"
             >
               William E. Doyle
