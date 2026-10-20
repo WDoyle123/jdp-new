@@ -1,5 +1,4 @@
 import "./App.css";
-import Banner from "./components/Banner";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -12,7 +11,6 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-      <Banner />
       <NavBar />
       <main>
         <Hero />
