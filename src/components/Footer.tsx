@@ -1,3 +1,5 @@
+import SocialLinks from "./SocialLinks";
+
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
@@ -21,6 +23,10 @@ function Footer() {
           <span className="text-cream/50 text-xs tracking-widest uppercase mt-1">
             Licensed Accountants
           </span>
+          <SocialLinks
+            className="mt-3"
+            linkClassName="text-cream/50 hover:text-cream transition-colors duration-200"
+          />
         </div>
 
         {/* Nav links */}

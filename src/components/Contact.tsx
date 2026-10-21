@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Phone, Mail, X, MessageSquare } from "lucide-react";
+import SocialLinks from "./SocialLinks";
 
 const contactDetails = [
   {
@@ -122,6 +123,13 @@ function Contact() {
                 </li>
               ))}
             </ul>
+
+            <div className="border-t border-cream/10 mt-8 pt-6">
+              <p className="text-cream/50 text-xs uppercase tracking-wider mb-3">
+                Follow Us
+              </p>
+              <SocialLinks linkClassName="w-10 h-10 rounded-xl bg-cream/10 text-olive-light hover:bg-olive-light hover:text-cream flex items-center justify-center transition-colors duration-200" />
+            </div>
           </motion.div>
 
           {/* Right — open form button */}
