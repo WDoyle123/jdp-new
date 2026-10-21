@@ -5,6 +5,7 @@ import Services from "./components/Services";
 import ServingTheSouth from "./components/ServingTheSouth";
 import AboutUs from "./components/AboutUs";
 import Testimonials from "./components/Testimonials";
+import Careers from "./components/Careers";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -18,6 +19,7 @@ function App() {
         <ServingTheSouth />
         <AboutUs />
         <Testimonials />
+        <Careers />
         <Contact />
       </main>
       <Footer />
